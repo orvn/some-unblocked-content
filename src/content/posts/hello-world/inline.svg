@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" role="img" aria-label="Decorative composition of overlapping organic shapes">
-  <rect width="600" height="240" fill="#f1ebe1"/>
-  <g style="isolation:isolate">
-    <ellipse cx="240" cy="120" rx="140" ry="92" transform="rotate(-12 240 120)" fill="#cf7858" style="mix-blend-mode:multiply"/>
-    <ellipse cx="340" cy="132" rx="110" ry="84" transform="rotate(20 340 132)" fill="#e6b89c" style="mix-blend-mode:multiply"/>
-    <ellipse cx="300" cy="150" rx="60" ry="46" transform="rotate(-30 300 150)" fill="#1f2440" style="mix-blend-mode:multiply"/>
-  </g>
-</svg>

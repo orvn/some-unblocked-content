@@ -102,6 +102,35 @@
   box-shadow: var(--shadow-md);
 }
 
+.post-source {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-source-label {
+  color: var(--ink);
+}
+
+.post-source-author {
+  color: var(--text);
+}
+
+.post-source a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.post-source a:hover {
+  color: var(--ink);
+}
+
 .post-header {
   margin-bottom: 2rem;
 }

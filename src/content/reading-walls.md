@@ -1,8 +1,11 @@
 ---
 title: Reading walls
-description: A short post to make sure the blog renders the way it should.
+description: A short article to confirm the blog template renders the way it should.
 date: 2026-06-13
+image: ./media/reading-walls.svg
 image_alt: An overlapping arrangement of organic terracotta and navy shapes
+original_url: https://example.com/reading-walls
+original_author: Casey Whitman
 ---
 
 The whole point of this site is to make it easier to read things that keep
@@ -15,7 +18,7 @@ Lorem ipsum is fine when you're sketching a layout, but a few real sentences
 tell you more about the rhythm of a page than any placeholder. This is a
 sentence that wants you to keep reading. The next one rewards that, briefly.
 
-![A small composition of overlapping shapes](./inline.svg)
+![A small composition of overlapping shapes](./media/reading-walls-inline.svg)
 
 ## Lists, blockquotes, code
 

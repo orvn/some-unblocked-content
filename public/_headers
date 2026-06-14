@@ -3,6 +3,7 @@
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate
 
   # Alpine.js v3 requires 'unsafe-eval' (uses new Function() for expression evaluation).
   # Tighten img-src / connect-src as needed for your CDN / API domains.

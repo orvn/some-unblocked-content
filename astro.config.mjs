@@ -1,16 +1,14 @@
 import { defineConfig } from 'astro/config';
 import alpinejs from '@astrojs/alpinejs';
-import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  // Set this to your production domain — required for sitemap + canonical URLs
+  // Production domain — only used for canonical URLs (no sitemap; site is delisted)
   site: 'https://some-unblocked-content.pages.dev',
 
   output: 'static',
 
   integrations: [
     alpinejs({ entrypoint: '/src/entrypoint' }),
-    sitemap(),
   ],
 
   // Security headers for the development server

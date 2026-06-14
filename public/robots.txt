@@ -1,5 +1,2 @@
 User-agent: *
-Allow: /
-
-# Update this URL to match your production domain
-Sitemap: https://some-unblocked-content.pages.dev/sitemap-index.xml
+Disallow: /
