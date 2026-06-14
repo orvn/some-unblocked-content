@@ -1,8 +1,8 @@
 ![Alpine.js](https://img.shields.io/badge/Alpine.js-8BC0D0?style=flat&logo=alpinedotjs&logoColor=black) ![Astro](https://img.shields.io/badge/Astro-FF5D01?style=flat&logo=astro&logoColor=white) ![Bun](https://img.shields.io/badge/Bun-000000?style=flat&logo=bun&logoColor=white)
 
-# Astro Starter
+# Some Unblocked Content
 
-A static site template repo built with [Astro](https://astro.build) and [Alpine.js](https://alpinejs.dev). Optimised for minimal Javascript footprint, performance, a11y, and SEO.
+Easier access to some blocked articles. A static site built with [Astro](https://astro.build) and [Alpine.js](https://alpinejs.dev). Optimised for minimal Javascript footprint, performance, a11y, and SEO.
 
 ## Stack
 
@@ -95,11 +95,11 @@ content:
 `src/content/global.toon` holds site-wide values used across all pages — site name, default description, default OG image, and the title postfix appended to every page title:
 
 ```
-name: Site Name
-tagline: Short site tagline.
-description: Default meta description.
-url: https://example.com
-title_postfix: " — Site Name"
+name: Some Unblocked Content
+tagline: Easier access to some blocked articles
+description: Easier access to some blocked articles.
+url: https://some-unblocked-content.pages.dev
+title_postfix: " — Unblocked"
 og_image: /og-default.png
 ```
 
@@ -140,7 +140,7 @@ Set `site` in `astro.config.mjs` to your production URL. This is required for co
 
 ```js
 export default defineConfig({
-  site: 'https://foo.com',
+  site: 'https://some-unblocked-content.pages.dev',
   // ...
 });
 ```
@@ -153,7 +153,7 @@ Configured in `astro.config.mjs`:
 
 ```js
 server: {
-  port: 14220,
+  port: 14480,
 },
 ```
 
@@ -175,7 +175,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 ```
 
-The `title` prop renders as `Page Title - Site Name` in `<title>`. Omit it on the home page to render just the site name.
+The `title` prop renders as `Page Title - Some Unblocked Content` in `<title>`. Omit it on the home page to render just the site name.
 
 ### Nav links
 
