@@ -1,7 +1,7 @@
 ---
 const navLinks = [
-  { label: 'Home',  href: '/'      },
-  { label: 'About', href: '/about' },
+  { label: 'Articles', href: '/'      },
+  { label: 'About',    href: '/about' },
 ];
 
 const { pathname } = Astro.url;
@@ -11,132 +11,49 @@ function isActive(href: string): boolean {
 }
 ---
 
-<!--
-  Indicator logic:
-  - A single <span> is absolutely positioned inside the <ul>
-  - Alpine tracks hovered/focused link dimensions via getBoundingClientRect
-  - On mouseleave it snaps back to the aria-current="page" link
-  - Transition is disabled on init so the indicator doesn't slide in from 0,0
--->
-<nav class="site-nav" aria-label="Main navigation" x-data="siteNav">
-
-  <button
-    class="nav-toggle"
-    :class="{ 'is-open': open }"
-    :aria-expanded="String(open)"
-    aria-controls="nav-menu"
-    aria-label="Toggle navigation menu"
-    @click="open = !open"
-    @keydown.escape="open = false"
-  >
-    <span class="hamburger" aria-hidden="true">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-  </button>
-
-  <ul
-    id="nav-menu"
-    class="nav-menu"
-    role="list"
-    x-ref="menu"
-    :class="{ 'is-open': open }"
-    @keydown.escape="open = false"
-    @mouseleave="reset()"
-  >
+<nav class="site-nav" aria-label="Main navigation">
+  <ul role="list">
     {navLinks.map(({ label, href }) => (
       <li>
-        <a
-          href={href}
-          class="nav-link"
-          aria-current={isActive(href) ? 'page' : undefined}
-          @mouseenter="move($el)"
-          @focus="move($el)"
-        >
+        <a href={href} class="nav-link" aria-current={isActive(href) ? 'page' : undefined}>
           {label}
         </a>
       </li>
     ))}
-
-    <span
-      class="nav-indicator"
-      :class="{ 'is-ready': ready }"
-      :style="`left: ${left}px; width: ${width}px`"
-      aria-hidden="true"
-    ></span>
   </ul>
-
 </nav>
 
-<!--
-  is:inline so this runs before Alpine's bundled script, allowing
-  alpine:init to register the component before Alpine processes the DOM.
--->
-<script is:inline>
-  document.addEventListener('alpine:init', () => {
-    Alpine.data('siteNav', () => ({
-      open:  false,
-      left:  0,
-      width: 0,
-      ready: false,
-
-      init() {
-        this.$nextTick(() => {
-          const active = this.$refs.menu.querySelector('[aria-current="page"]');
-          if (active) this.move(active);
-          // Enable transition only after the initial snap
-          setTimeout(() => { this.ready = true; }, 50);
-        });
-      },
-
-      move(el) {
-        const menu = this.$refs.menu.getBoundingClientRect();
-        const item = el.getBoundingClientRect();
-        this.left  = item.left - menu.left;
-        this.width = item.width;
-      },
-
-      reset() {
-        const active = this.$refs.menu.querySelector('[aria-current="page"]');
-        if (active) this.move(active);
-        else this.width = 0;
-      },
-    }));
-  });
-</script>
-
-<style lang="scss">
-  @use '../styles/breakpoints' as *;
-
-  /* ---- Desktop --------------------------------------------------------- */
-
-  .site-nav {
-    position: relative;
+<style>
+  .site-nav ul {
     display: flex;
     align-items: center;
-  }
-
-  .nav-toggle {
-    display: none;
-  }
-
-  .nav-menu {
-    position: relative; /* required for indicator absolute positioning */
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+    gap: var(--space-md);
   }
 
   .nav-link {
     position: relative;
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
     color: var(--text-muted);
-    font-size: var(--text-sm);
-    font-weight: 500;
-    letter-spacing: 0.04em;
     text-decoration: none;
-    padding-block: 0.25rem;
+    padding-block: 0.3rem;
     transition: color 200ms ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 220ms ease;
   }
 
   .nav-link:hover,
@@ -144,109 +61,8 @@ function isActive(href: string): boolean {
     color: var(--ink);
   }
 
-  /* Floating indicator — single element that slides between links */
-  .nav-indicator {
-    position: absolute;
-    bottom: -2px;
-    height: 2px;
-    background: var(--accent);
-    border-radius: 9999px;
-    pointer-events: none;
-    /* No transition on load — snaps to active link instantly */
-  }
-
-  .nav-indicator.is-ready {
-    transition: left 250ms ease-out, width 250ms ease-out;
-  }
-
-  /* ---- Hamburger icon -------------------------------------------------- */
-
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    width: 22px;
-  }
-
-  .hamburger span {
-    display: block;
-    height: 2px;
-    background: currentColor;
-    border-radius: 9999px;
-    transform-origin: center;
-    transition:
-      transform 350ms ease,
-      opacity  350ms ease;
-  }
-
-  .nav-toggle.is-open .hamburger span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .nav-toggle.is-open .hamburger span:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
-  }
-  .nav-toggle.is-open .hamburger span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  /* ---- Mobile ---------------------------------------------------------- */
-
-  @include large {
-    .nav-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      color: var(--text);
-      border-radius: 0.3rem;
-      transition: background-color 200ms ease;
-    }
-
-    .nav-toggle:hover {
-      background-color: var(--surface);
-    }
-
-    .nav-menu {
-      display: none;
-      position: absolute;
-      top: calc(100% + 0.75rem);
-      right: 0;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0;
-      min-width: 180px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 0.45rem;
-      box-shadow: var(--shadow-lg);
-      padding-block: 0.5rem;
-      z-index: var(--z-above);
-    }
-
-    .nav-menu.is-open {
-      display: flex;
-    }
-
-    .nav-menu li {
-      width: 100%;
-    }
-
-    .nav-link {
-      display: block;
-      padding: 0.75rem 1rem;
-    }
-
-    .nav-link[aria-current='page'] {
-      background-color: transparent;
-      color: var(--ink);
-    }
-
-    .nav-indicator {
-      display: none;
-    }
+  .nav-link:hover::after,
+  .nav-link[aria-current='page']::after {
+    transform: scaleX(1);
   }
 </style>

@@ -8,37 +8,29 @@ const global = loadGlobal();
 const posts = (await getCollection('posts', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
-
-const jsonLD = {
-  '@context': 'https://schema.org',
-  '@type': 'Blog',
-  name: global.name,
-  description: global.description,
-  url: global.url,
-};
+const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' });
 ---
 
-<BaseLayout description={global.description} jsonLD={jsonLD}>
-  <section class="blog-index">
+<BaseLayout description={global.description}>
+  <section class="index-articles">
     <div class="container">
-      <header class="blog-index-header">
-        <h1>{global.name}</h1>
-        <p>{global.tagline}.</p>
-      </header>
-
       {posts.length === 0 ? (
-        <p class="post-list-empty">No articles yet.</p>
+        <p class="article-empty">— No articles yet —</p>
       ) : (
-        <ul class="post-list" role="list">
-          {posts.map((post) => (
-            <li class="post-item">
-              <a href={`/b/${post.id}`} class="post-link">
-                <time datetime={post.data.date.toISOString()} class="post-date">
-                  {fmt.format(post.data.date)}
-                </time>
-                <h2 class="post-title">{post.data.title}</h2>
-                <p class="post-blurb">{post.data.description}</p>
+        <ul class="article-list">
+          {posts.map((post, i) => (
+            <li class="article-row">
+              <a href={`/b/${post.id}`} class="article-link">
+                <span class="article-number">{(i + 1).toString().padStart(3, '0')}</span>
+                <div class="article-body">
+                  <p class="article-meta">
+                    <time datetime={post.data.date.toISOString()}>{fmt.format(post.data.date)}</time>
+                    <span>{post.data.original_author}</span>
+                  </p>
+                  <h2 class="article-title">{post.data.title}</h2>
+                  <p class="article-blurb">{post.data.description}</p>
+                </div>
+                <span class="article-arrow" aria-hidden="true">Read →</span>
               </a>
             </li>
           ))}

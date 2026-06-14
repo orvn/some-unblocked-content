@@ -29,7 +29,7 @@ const {
 } = post.data;
 
 const global = loadGlobal();
-const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
+const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' });
 const formattedDate = fmt.format(date);
 const originalHost = new URL(original_url).hostname.replace(/^www\./, '');
 
@@ -48,28 +48,24 @@ const jsonLD = {
 <BaseLayout title={title} description={description} jsonLD={jsonLD}>
   <article class="post">
     <div class="container">
-      <div class="post-paper">
-        <p class="post-source">
-          <span class="post-source-label">Originally</span>
-          by <span class="post-source-author">{original_author}</span>
-          at <a href={original_url} rel="noopener external" target="_blank">{originalHost}</a>
+      <a href="/" class="post-breadcrumb">← Articles</a>
+
+      <header class="post-header">
+        <h1 class="post-title">{title}</h1>
+        <p class="post-description">{description}</p>
+        <p class="post-meta">
+          <time datetime={date.toISOString()}>{formattedDate}</time>
+          <span>{original_author}</span>
+          <a href={original_url} rel="noopener external" target="_blank">{originalHost}</a>
         </p>
+      </header>
 
-        <header class="post-header">
-          <time datetime={date.toISOString()} class="post-date">
-            {formattedDate}
-          </time>
-          <h1>{title}</h1>
-          <p class="post-description">{description}</p>
-        </header>
+      <figure class="post-figure">
+        <Image src={image} alt={image_alt ?? title} />
+      </figure>
 
-        <figure class="post-figure">
-          <Image src={image} alt={image_alt ?? title} />
-        </figure>
-
-        <div class="markdown post-body">
-          <Content />
-        </div>
+      <div class="markdown post-body">
+        <Content />
       </div>
     </div>
   </article>

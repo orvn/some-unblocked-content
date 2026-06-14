@@ -1,10 +1,10 @@
 :root {
    /* -------------------------------------------------------------------------
-     Colors — warm magazine paper palette, multiply-blob inspired
+     Colors — warm magazine paper palette
   -------------------------------------------------------------------------- */
    --paper: #f1ebe1;
    --sand: #d8c6ad;
-   --rule: #c7b7a0;
+   --rule: #b6a487;
    --mist: #8a7e6e;
    --coffee: #4a3e32;
    --ink: #1f2440;
@@ -15,8 +15,9 @@
    /* Semantic aliases */
    --bg: var(--sand);
    --surface: var(--paper);
-   --text: var(--coffee);
-   --text-muted: var(--mist);
+   --text: var(--ink);
+   --text-muted: var(--coffee);
+   --text-faint: var(--mist);
    --heading: var(--ink);
    --accent: var(--terracotta);
    --accent-soft: var(--peach);
@@ -28,39 +29,52 @@
      Typography
   -------------------------------------------------------------------------- */
 
-   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-   --font-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia,
-      ui-serif, serif;
-   --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo,
-      Consolas, 'DejaVu Sans Mono', monospace;
+   --font-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, ui-serif, serif;
+   --font-sans: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, ui-serif, serif;
+   --font-mono: ui-monospace, 'JetBrains Mono', 'Source Code Pro', Menlo, Consolas, monospace;
 
    /* Fluid type scale */
-   --text-xs: clamp(0.75rem, 0.72rem + 0.14vw, 0.875rem);
-   --text-sm: clamp(0.875rem, 0.84rem + 0.18vw, 1rem);
-   --text-base: clamp(1rem, 0.95rem + 0.24vw, 1.125rem);
-   --text-lg: clamp(1.125rem, 1.06rem + 0.31vw, 1.25rem);
-   --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
-   --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
-   --text-3xl: clamp(2rem, 1.6rem + 2vw, 2.5rem);
-   --text-4xl: clamp(2.5rem, 1.9rem + 3vw, 3.5rem);
-   --text-5xl: clamp(3rem, 2.2rem + 4vw, 4.5rem);
+   --text-3xs: clamp(0.625rem, 0.6rem + 0.1vw, 0.6875rem);
+   --text-2xs: clamp(0.6875rem, 0.66rem + 0.13vw, 0.75rem);
+   --text-xs:  clamp(0.75rem, 0.72rem + 0.14vw, 0.875rem);
+   --text-sm:  clamp(0.875rem, 0.84rem + 0.18vw, 1rem);
+   --text-base: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
+   --text-lg:  clamp(1.1875rem, 1.1rem + 0.4vw, 1.375rem);
+   --text-xl:  clamp(1.375rem, 1.25rem + 0.6vw, 1.625rem);
+   --text-2xl: clamp(1.625rem, 1.4rem + 1.1vw, 2.25rem);
+   --text-3xl: clamp(2rem, 1.7rem + 1.5vw, 2.75rem);
+   --text-4xl: clamp(2.5rem, 1.95rem + 2.7vw, 4rem);
+   --text-5xl: clamp(3.25rem, 2.4rem + 4.3vw, 5.5rem);
+   --text-hero: clamp(3.75rem, 2.4rem + 6.8vw, 7.5rem);
 
+   /* -------------------------------------------------------------------------
+     Spacing scale — used everywhere; do not invent ad-hoc clamps in styles
+  -------------------------------------------------------------------------- */
+   --space-3xs: clamp(0.25rem, 0.22rem + 0.1vw, 0.375rem);
+   --space-2xs: clamp(0.5rem, 0.45rem + 0.2vw, 0.625rem);
+   --space-xs:  clamp(0.75rem, 0.66rem + 0.4vw, 1rem);
+   --space-sm:  clamp(1rem, 0.85rem + 0.7vw, 1.5rem);
+   --space-md:  clamp(1.5rem, 1.2rem + 1.2vw, 2.5rem);
+   --space-lg:  clamp(2.5rem, 1.85rem + 2vw, 4rem);
+   --space-xl:  clamp(4rem, 2.8rem + 4vw, 7rem);
+   --space-2xl: clamp(6rem, 4rem + 6vw, 11rem);
 
    /* -------------------------------------------------------------------------
      Layout
   -------------------------------------------------------------------------- */
-   --container-width: 1200px;
-   --container-padding: clamp(1rem, 5vw, 2rem);
-   --header-height: 4rem;
+   --container-width: 78rem;
+   --measure: 36rem;       /* comfortable reading line length */
+   --measure-wide: 46rem;  /* slightly wider for hero copy */
+   --container-padding: clamp(1.25rem, 4vw, 2.5rem);
+   --header-height: 4.5rem;
 
 
    /* -------------------------------------------------------------------------
-     Shadows — soft warm
+     Shadows — soft, warm
   -------------------------------------------------------------------------- */
-   --shadow-sm: 0 1px 3px 0 rgb(31 36 64 / 0.10);
-   --shadow-md: 0 6px 14px -4px rgb(31 36 64 / 0.14);
-   --shadow-lg: 0 18px 36px -8px rgb(31 36 64 / 0.20);
+   --shadow-sm: 0 1px 2px 0 rgb(31 36 64 / 0.06);
+   --shadow-md: 0 8px 22px -6px rgb(31 36 64 / 0.12);
+   --shadow-lg: 0 24px 50px -12px rgb(31 36 64 / 0.18);
 
    /* -------------------------------------------------------------------------
      Z-index

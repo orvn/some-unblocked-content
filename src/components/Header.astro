@@ -6,9 +6,10 @@ const { name } = loadGlobal();
 ---
 
 <header class="site-header" role="banner">
-  <div class="container header-inner">
-    <a href="/" class="site-logo" aria-label={`${name} — go to homepage`}>
-      {name}
+  <div class="container site-header-inner">
+    <a href="/" class="wordmark" aria-label={`${name} — go to homepage`}>
+      <span class="wordmark-glyph" aria-hidden="true">⨵</span>
+      <span class="wordmark-name">{name}</span>
     </a>
     <Nav />
   </div>
@@ -18,32 +19,58 @@ const { name } = loadGlobal();
   .site-header {
     position: sticky;
     top: 0;
-    height: var(--header-height);
-    background-color: rgb(241 235 225 / 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
+    background-color: rgb(216 198 173 / 0.86);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
     z-index: var(--z-header);
   }
 
-  .header-inner {
+  .site-header::after {
+    content: '';
+    position: absolute;
+    inset: auto var(--container-padding) 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .site-header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
+    gap: var(--space-md);
+    height: var(--header-height);
   }
 
-  .site-logo {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: var(--text-lg);
-    color: var(--heading);
+  .wordmark {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.55rem;
     text-decoration: none;
-    letter-spacing: -0.02em;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .wordmark-glyph {
+    font-family: 'Apple Symbols', 'Noto Sans Symbols 2', 'Segoe UI Symbol', ui-serif, serif;
+    font-size: 1.35rem;
+    line-height: 1;
+    color: var(--accent);
     transition: color 200ms ease;
   }
 
-  .site-logo:hover {
+  .wordmark-name {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    transition: color 200ms ease;
+  }
+
+  .wordmark:hover .wordmark-glyph {
+    color: var(--ink);
+  }
+
+  .wordmark:hover .wordmark-name {
     color: var(--accent);
   }
 </style>
