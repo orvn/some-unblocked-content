@@ -4,8 +4,8 @@ description: Nobody really teaches you research.
 date: 2026-06-10
 image: ./media/how-to-research.jpg
 image_alt: Hedy Lamarr in a research context
-original_url: https://x.com/itsreallyvivek/status/2064686372737454155
-original_author: @itsreallyvivek
+original_url: "https://x.com/itsreallyvivek/status/2064686372737454155"
+original_author: "@itsreallyvivek"
 ---
 
 Nobody really teaches you research. you get a desk, a problem someone else picked, and a vague instruction to produce something novel. so most people reverse-engineer the job from what they can see, which is papers, threads, and announcements, and what they end up learning is how to look like a researcher rather than how to be one. the actual skill is a stack of smaller skills, and almost every one of them can be deliberately trained.
