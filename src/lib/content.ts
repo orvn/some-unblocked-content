@@ -38,3 +38,10 @@ export function loadGlobal(): GlobalContent {
 export function loadPage<C = Record<string, unknown>>(name: string): PageContent<C> {
   return decode(readToon(`${name}.toon`)) as unknown as PageContent<C>;
 }
+
+export function displayUrl(input: string): string {
+  const url = new URL(input);
+  const host = url.host.replace(/^www\./, '');
+  const path = url.pathname === '/' ? '' : url.pathname.replace(/\/$/, '');
+  return host + path;
+}

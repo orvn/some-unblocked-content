@@ -2,22 +2,13 @@
 import { loadGlobal } from '../lib/content';
 
 const { name } = loadGlobal();
-const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer" role="contentinfo">
   <div class="container site-footer-inner">
     <p class="footer-copy">
-      <span class="footer-mark">©</span>
-      <span class="footer-year">{year}</span>
       <span class="footer-name">{name}</span>
     </p>
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <ul role="list">
-        <li><a href="/about">About</a></li>
-        <li><a href="/privacy">Privacy</a></li>
-      </ul>
-    </nav>
   </div>
 </footer>
 
@@ -48,24 +39,4 @@ const year = new Date().getFullYear();
     margin: 0;
   }
 
-  .footer-mark { color: var(--accent); }
-
-  .footer-nav ul {
-    display: flex;
-    gap: var(--space-md);
-  }
-
-  .footer-nav a {
-    font-family: var(--font-mono);
-    font-size: var(--text-2xs);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 200ms ease;
-  }
-
-  .footer-nav a:hover {
-    color: var(--ink);
-  }
 </style>

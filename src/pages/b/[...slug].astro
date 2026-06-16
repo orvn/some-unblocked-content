@@ -2,7 +2,7 @@
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { loadGlobal } from '../../lib/content';
+import { loadGlobal, displayUrl } from '../../lib/content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => !data.draft);
@@ -31,7 +31,7 @@ const {
 const global = loadGlobal();
 const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' });
 const formattedDate = fmt.format(date);
-const originalHost = new URL(original_url).hostname.replace(/^www\./, '');
+const originalDisplay = displayUrl(original_url);
 
 const jsonLD = {
   '@context': 'https://schema.org',
@@ -58,7 +58,13 @@ const jsonLD = {
           <span>{original_author}</span>
         </p>
         <p class="post-source">
-          <a href={original_url} rel="noopener external" target="_blank">{originalHost}</a>
+          <a href={original_url} rel="noopener external" target="_blank">
+            <svg class="post-source-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 1 0-7.07-7.07l-1.5 1.5" />
+              <path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5" />
+            </svg>
+            <span>{originalDisplay}</span>
+          </a>
         </p>
       </header>
 

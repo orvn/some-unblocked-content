@@ -23,6 +23,9 @@ const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC
             <li class="article-row">
               <a href={`/b/${post.id}`} class="article-link">
                 <span class="article-number">{(i + 1).toString().padStart(3, '0')}</span>
+                <div class="article-thumb" aria-hidden="true">
+                  <Image src={post.data.image} alt="" widths={[200, 400]} sizes="192px" />
+                </div>
                 <div class="article-body">
                   <p class="article-meta">
                     <time datetime={post.data.date.toISOString()}>{fmt.format(post.data.date)}</time>
@@ -30,9 +33,6 @@ const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC
                   </p>
                   <h2 class="article-title">{post.data.title}</h2>
                   <p class="article-blurb">{post.data.description}</p>
-                </div>
-                <div class="article-thumb" aria-hidden="true">
-                  <Image src={post.data.image} alt="" widths={[160, 320]} sizes="160px" />
                 </div>
               </a>
             </li>

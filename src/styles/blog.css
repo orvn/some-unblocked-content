@@ -27,13 +27,17 @@
 
 .article-link {
   display: grid;
-  grid-template-columns: 4.5rem minmax(0, 1fr) 10rem;
-  gap: var(--space-md);
+  grid-template-columns: 3rem 12rem minmax(0, 1fr);
+  column-gap: var(--space-sm);
   align-items: center;
   padding-block: var(--space-md);
   text-decoration: none;
   color: inherit;
   transition: padding-left 220ms ease, color 220ms ease;
+}
+
+.article-link > .article-body {
+  margin-left: var(--space-xs);
 }
 
 .article-link:hover,
@@ -97,9 +101,9 @@
 }
 
 .article-thumb {
-  justify-self: end;
+  justify-self: start;
   width: 100%;
-  max-width: 10rem;
+  max-width: 12rem;
   aspect-ratio: 16 / 10;
   overflow: hidden;
   border-radius: 0.5rem;
@@ -208,13 +212,27 @@
   font-family: var(--font-mono);
   font-size: var(--text-2xs);
   letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
 }
 
 .post-source a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
   color: var(--ink);
   text-decoration: none;
+}
+
+.post-source a span {
   border-bottom: 1px solid currentColor;
   padding-bottom: 0.05em;
+}
+
+.post-source-icon {
+  width: 0.95em;
+  height: 0.95em;
+  flex-shrink: 0;
+  transform: rotate(-45deg);
 }
 
 .post-source a:hover { color: var(--accent); }
@@ -222,13 +240,16 @@
 .post-figure {
   max-width: var(--measure);
   margin: var(--space-lg) 0;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
 }
 
 .post-figure img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
 }
 
 .post-body {
@@ -236,7 +257,7 @@
 }
 
 /* =========================================================================
-   Generic page-section (about, privacy, etc.) — keep them on the same rhythm
+   Generic page-section (about, etc.) — keep them on the same rhythm
 ========================================================================= */
 
 .page-section {
