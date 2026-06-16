@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import { loadGlobal } from '../lib/content';
 
@@ -30,7 +31,9 @@ const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC
                   <h2 class="article-title">{post.data.title}</h2>
                   <p class="article-blurb">{post.data.description}</p>
                 </div>
-                <span class="article-arrow" aria-hidden="true">Read →</span>
+                <div class="article-thumb" aria-hidden="true">
+                  <Image src={post.data.image} alt="" widths={[160, 320]} sizes="160px" />
+                </div>
               </a>
             </li>
           ))}
