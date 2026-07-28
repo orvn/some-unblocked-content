@@ -1,0 +1,31 @@
+---
+title: A Sad Kind of Convenience
+description: The death of physical media is getting closer, and we may miss it when it’s gone.
+date: 2026-06-26
+image: ./media/sad-convenience.png
+image_alt: Graphic of a disintegrating CD
+original_url: "https://www.theatlantic.com/technology/2026/07/playstation-ends-discs/687770/"
+original_author: "Will Gottsegen, Atlantic"
+---
+
+When I was 16, I did something I'm embarrassed to admit: I waited in a long line to buy a video game called *Assassin's Creed III*. Over the past few days, though, that experience has become ever so slightly tinged with nostalgia. Last week, Sony announced that, starting in 2028, new PlayStation games will be available only as digital downloads rather than physical discs. Will kids ever get to embarrass themselves like this again?
+
+The transition is indicative of a greater loss---one that I, and I suspect many people, have mixed feelings about. More and more, entertainment companies are ushering people into seamless digital spaces where convenience replaces ownership: games without discs, music on Spotify instead of vinyl, movies on Netflix instead of a theater.
+
+Markets change, and entertainment changes with them; this has always been the case. Before the advent of at-home consoles, public-arcade games were built to be played in short, endlessly repeatable loops---the goal being to pull in more and more quarters with each new attempt. In the 1990s, some developers padded out the lengths of their games and in some cases made them artificially difficult, to prevent customers from completing them during rental periods instead of buying them.
+
+And there's a fairly obvious supply-and-demand explanation for why the music industry stopped hawking CDs; why DVD-bargain bins have disappeared from some American supermarkets; and why GameStop, once the central node of a booming video-game retail industry, has closed much of its brick-and-mortar empire. When the PlayStation 4 launched, in 2013, just 13 percent of Sony's video games were being purchased digitally. Last year, that number reportedly [approached](https://web.archive.org/web/20260707040725/https://www.theguardian.com/games/2026/jul/01/sony-playstation-digital-downloads) 80 percent. In its [announcement](https://web.archive.org/web/20260707040725/https://blog.playstation.com/2026/07/01/physical-disc-production-ending-in-january-2028-for-new-games-releasing-on-playstation-consoles/), Sony underscored that the transition from physical to digital is part of an effort to "align more closely" with how most gamers are already choosing to play.
+
+[Read: What DVDs gave us](https://web.archive.org/web/20260707040725/https://www.theatlantic.com/newsletters/archive/2023/08/netflix-ending-dvd-subscription/675146/)
+
+Developers see it too: Last month, the publisher behind the upcoming *Grand Theft Auto VI*---which is expected to be one of the biggest entertainment launches of all time---revealed that the "physical" edition of the game would actually be a box with just a download code inside. Sony's announcement "probably does move the markets in a big way towards digital," Giorgo Paizanis, who leads the consulting firm BCG's gaming work, told me. "But we're already 80 percent there." (PlayStation did not respond to a request for comment.)
+
+The convenience of downloads may be an upside, though there are certainly real downsides in the transition away from physical media. When you buy a disc, you own it and can resell it or lend it out the old fashioned way---without online mediation. No corporate middleman was watching me hand my copy of *Red Dead Redemption *to my friend when I was done with it. Although physical games can be damaged or even [decay](https://web.archive.org/web/20260707040725/https://www.lenovo.com/us/en/glossary/cd-rot/) over long periods of time, I could still loan that same copy out today if I wanted. Digital purchases only grant you a license for use, and that license can be revoked. At around the same time that Sony announced the digital transition for PlayStation, it also alerted customers that more than 500 movies and shows would be pulled from its online marketplace, removing them from the libraries of users who had purchased them. (As an *Arts Technica *[headline](https://web.archive.org/web/20260707040725/https://arstechnica.com/gadgets/2026/06/sony-erases-digital-content-from-libraries-were-reminded-we-dont-own-what-we-buy/) put it, "We're Reminded We Don't Own What We Buy.")
+
+[Read: The Amazonification of everything, now as a video game](https://web.archive.org/web/20260707040725/https://www.theatlantic.com/technology/archive/2025/06/death-stranding-2-tech-anxiety/683292/)
+
+Physical games also function as markers of personal taste, just as sprawling record collections or personal libraries of dusty paperbacks do. A copy of *Elden Ring *likely conveys a different impression than a Criterion Collection Blu-ray, but video-game discs at least may one day radiate a kind of old-school cool. (Early NES cartridges may already possess this energy.) There's a reason that people are still nostalgic for Blockbuster, and that the decline of physical-media sales [slowed dramatically](https://web.archive.org/web/20260707040725/https://www.latimes.com/entertainment-arts/business/story/2026-02-23/why-gen-z-wants-to-buy-rent-dvds-blu-rays-in-age-of-streaming) in 2025.
+
+When it comes to vinyl records, at least, part of their appeal today lies in their physicality. Flipping and periodically cleaning a record ultimately personalizes the experience of listening to it. Up close, you can see how the rumblings of a bass guitar, or the vibrations of a clarinet's reed, are transcribed in the grooves. The motion of playback rhymes with the mode of artistic production. And because you can fit only so many of these records in your house, you inevitably end up listening and relistening to the same ones. Connections form.
+
+Video-game discs are not vinyl. Records produce their own sound, which might be distorted even by a hint of dust or moisture, whereas discs are used to load entirely virtual experiences. If they break, they break. I won't miss that, even as I recall the feeling of popping that *Assassin's Creed III *Blu-ray out of its box, the sound of the disc whirring in my console---small pleasures sacrificed in the name of progress.
